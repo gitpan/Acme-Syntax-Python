@@ -209,7 +209,7 @@ With perl you can also define params for use, with those you would just use impo
 
 =head1 FUNCTIONS
 
-You can declate Functions just like you would in Python.
+You can declare Functions just like you would in Python.
 
 ex: Function with no Paramaters:
 
@@ -224,6 +224,24 @@ You can also declare functions with Paramaters:
   hello("World");
 
 It will automatically define the variable for you and assign it from the paramater list.
+
+=head1 LAMBDA
+
+Lambas are also supported as a named definition:
+
+  my $sub = lambda: 5 * 2;
+
+  print $sub->();
+
+Would print 10.
+
+You can declare params for lambdas just like functions:
+
+  my $sub = lambda ($x): $x * 2;
+
+  print $sub->(5);
+
+Would print 10 as well.
 
 =head1 IF/ELIF/ELSE
 
@@ -268,12 +286,22 @@ If declaring your paramaters for a Method in a Object class you need to declare 
   print $baz->bar();
 
 
+Classes can also handle inheritance of other modules:
+
+  use Acme::Syntax::Python; 
+  class Foo inherits File::Find:
+      def bar:
+          print "baz";
+
+  import Foo;
+  Foo::find(\&wanted, "./");
+
 If you wanted to write an entire object class with this then you would put the class in it's own .pm file
 like normal and include it in the Perl file like normal.
 
 =head1 VERSION
 
-This documentation describes version 0.01.
+This documentation describes version 0.02.
 
 =head1 AUTHOR
 

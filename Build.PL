@@ -18,7 +18,7 @@ my %module_build_args = (
     "Madison Koenig"
   ],
   "dist_name" => "Acme-Syntax-Python",
-  "dist_version" => "0.01",
+  "dist_version" => "0.02",
   "license" => "restrictive",
   "module_name" => "Acme::Syntax::Python",
   "recommends" => {},
